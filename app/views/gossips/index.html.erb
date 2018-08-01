@@ -1,3 +1,28 @@
-<p>
-  test
-</p>
+<h1>Voici la liste des Gossips</h1>
+
+<div class="container">
+  <table >
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Pseudo</th>
+    <th>Action</th>
+  </tr>
+  </table>
+  <% @gossip.each do |gossip| %>
+  <table >
+    <tr>
+      <td><%= gossip.title %></td>
+      <td><%= gossip.content %></td>
+      <td><%= gossip.anonymous_gossiper %></td>
+      <td><%= link_to 'Supprimer', gossip, method: :delete %></td>
+    </tr>
+
+  </table>
+  <% end %>
+</div>
+
+
+<div class='container'>
+  <a href="<%= new_gossip_path %>" class= 'btn btn-warning'>Créer</a>
+</div>

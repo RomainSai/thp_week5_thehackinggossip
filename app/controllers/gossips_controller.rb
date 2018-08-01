@@ -8,9 +8,7 @@ class GossipsController < ApplicationController
   def new
     puts "j'affiche depuis new"
     @gossip = Gossip.new
-    puts 'j affiche depuis new'
     puts params.inspect
-
   end
 
   def create
