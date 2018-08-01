@@ -9,4 +9,5 @@
 <div class='container'>
   <a href="<%= edit_gossip_path(@gossip.id) %>" class= 'btn btn-warning'>Editer</a>
   <a href="<%= gossips_path %>" class= 'btn btn-primary'>Revenir à l index</a>
+  <a href="<%= gossip_path(@gossip)%>" class='btn btn-danger' data-confirm='sure' data-method='DELETE'>Supprimer</a>
 </div>
