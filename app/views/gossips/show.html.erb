@@ -5,3 +5,8 @@
   <p>  content : <%= @gossip.content %>  </p>
   <p>  author : <%= @gossip.anonymous_gossiper %>  </p>
 </div>
+
+<div class='container'>
+  <a href="<%= edit_gossip_path(@gossip.id) %>" class= 'btn btn-warning'>Editer</a>
+  <a href="<%= gossips_path %>" class= 'btn btn-primary'>Revenir à l index</a>
+</div>
