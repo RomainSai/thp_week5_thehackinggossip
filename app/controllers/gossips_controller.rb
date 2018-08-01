@@ -1,5 +1,6 @@
 class GossipsController < ApplicationController
 
+
   def index
     @gossip = Gossip.all
     puts 'j affiche depuis index'
@@ -14,10 +15,8 @@ class GossipsController < ApplicationController
   def create
     gossip = Gossip.create(gossip_params)
 
-    #@gossip = Gossip.create(
-    #  title: params[:gossip][:title],
-    #   content: params[:gossip][:content],
-    #   anonymous_gossiper: params[:gossip][:anonymous_gossiper])
+
+
     puts 'j affiche depuis create'
     #redirect_to action: 'show', id: @gossip.title
     redirect_to gossip_path(gossip.id)
@@ -27,6 +26,7 @@ class GossipsController < ApplicationController
   def show
     puts "j'affiche depuis show"
     @gossip = Gossip.find(params[:id])
+    @comment = @gossip.comments.build
   end
 
   def edit
@@ -37,7 +37,7 @@ class GossipsController < ApplicationController
   def update
     gossip = Gossip.create(gossip_params)
     redirect_to gossip_path(gossip.id)
-  end 
+  end
 
   def destroy
     @gossip = Gossip.find(params[:id])

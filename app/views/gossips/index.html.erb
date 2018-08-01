@@ -7,6 +7,8 @@
     <th>Content</th>
     <th>Pseudo</th>
     <th>Action</th>
+    <th>Visualiser</th>
+
   </tr>
   </table>
   <% @gossip.each do |gossip| %>
@@ -16,6 +18,7 @@
       <td><%= gossip.content %></td>
       <td><%= gossip.anonymous_gossiper %></td>
       <td><%= link_to 'Supprimer', gossip, method: :delete %></td>
+      <td><%= link_to 'Visualiser', gossip_path(gossip) %></td>
     </tr>
 
   </table>

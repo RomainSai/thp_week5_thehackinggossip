@@ -10,3 +10,19 @@
   <a href="<%= gossips_path %>" class= 'btn btn-primary'>Revenir à l index</a>
   <a href="<%= gossip_path(@gossip)%>" class='btn btn-danger' data-confirm='sure' data-method='DELETE'>Supprimer</a>
 </div>
+
+<h1>Ajout commentaire</h1>
+
+<%= form_for @comment, url: {action: "create"} do |f| %>
+<div class="form-group">
+  <label>Ton nom anonyme:</label>
+  <%= f.text_field :anonymous_commentor, class: 'form-control', placeholder: 'ton pseudo' %>
+</div>
+<div class="form-group">
+  <label>Contenu du commentaire: </label>
+    <%= f.text_field :content, class: 'form-control', placeholder: 'ton commentaire' %>
+  </div>
+  <div>
+      <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+ <% end -%>
