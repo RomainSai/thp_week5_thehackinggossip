@@ -1,15 +1,16 @@
 <h1>Ajout commentaire</h1>
 
+
 <%= form_for @comment, url: {action: "create"} do |f| %>
 <div class="form-group">
   <label>Ton nom anonyme:</label>
-  <%= f.text_field :anonymous_gossiper, class: 'form-control', placeholder: 'ton pseudo' %>
+  <%= f.text_field :anonymous_commentor, class: 'form-control', placeholder: 'ton pseudo' %>
 </div>
 <div class="form-group">
   <label>Contenu du commentaire: </label>
     <%= f.text_field :content, class: 'form-control', placeholder: 'ton commentaire' %>
   </div>
-  <div>
-      <button type="submit" class="btn btn-primary">Valider</button>
-    </div>
+ <%= f.submit  %>
  <% end -%>
+
+
